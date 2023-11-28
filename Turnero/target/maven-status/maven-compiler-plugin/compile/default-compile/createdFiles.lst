@@ -1,0 +1,13 @@
+com\pruebatec2\turnero\persistencia\CiudadanosJpaController.class
+com\pruebatec2\turnero\servlets\CiudadanosSv.class
+com\pruebatec2\turnero\persistencia\ControladoraPersistencia.class
+com\pruebatec2\turnero\JakartaRestConfiguration.class
+com\pruebatec2\turnero\persistencia\TurnosJpaController.class
+com\pruebatec2\turnero\resources\JakartaEE8Resource.class
+com\pruebatec2\turnero\logica\Ciudadanos.class
+com\pruebatec2\turnero\logica\Turnos.class
+com\pruebatec2\turnero\persistencia\exceptions\PreexistingEntityException.class
+com\pruebatec2\turnero\persistencia\exceptions\IllegalOrphanException.class
+com\pruebatec2\turnero\servlets\TurnosSv.class
+com\pruebatec2\turnero\persistencia\exceptions\NonexistentEntityException.class
+com\pruebatec2\turnero\logica\Controladora.class
