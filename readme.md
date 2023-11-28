@@ -56,9 +56,27 @@ indicado en la fecha seleccionada, no se mostrará ningún dato.
 
 ![listado de turnos por fecha](listado.turnos.PNG)
 
+## Tecnologías utilizadas
+- Java + Servlets
+- JSP
+- Bootstrap
+ + Plantilla utilizada: Agency (https://startbootstrap.com/theme/agency)
+- JPA
+- MySQL
+- Colecciones
+- Objetos
+- Funciones lambda
+- Optionals
+- Streams
+
+## Información sobre derechos de autor y licencias
+La plantilla de Bootstrap utilizada es gratuita y de licencia libre, al igual que la
+aplicación como tal. 
+
 ## Operaciones que pueden realizar los usuarios
 - [x] Agregar un nuevo turno
 - [x] Listar turnos
 - [x] Filtrar turnos
 
-/assets/images/diagrama-clases.PNG
+## Diagrama de clases de la aplicación
+![diagrama de clases](diagrama-clases.PNG)
