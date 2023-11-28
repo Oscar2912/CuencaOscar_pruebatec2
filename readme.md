@@ -60,7 +60,7 @@ indicado en la fecha seleccionada, no se mostrará ningún dato.
 - Java + Servlets
 - JSP
 - Bootstrap
- + Plantilla utilizada: Agency (https://startbootstrap.com/theme/agency)
+ - Plantilla utilizada: Agency (https://startbootstrap.com/theme/agency)
 - JPA
 - MySQL
 - Colecciones
