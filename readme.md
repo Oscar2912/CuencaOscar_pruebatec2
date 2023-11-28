@@ -17,7 +17,7 @@ Para poder utilizar la aplicación, será necesario conocer los datos de acceso 
 Tomcat como a MySQL. Tras acceder a ambos, al iniciar la aplicación, se mostrará en el 
 navegador web el panel de registro de usuarios y turnos.
 
-https://raw.githubusercontent.com/Oscar2912/CuencaOscar_pruebatec2/master/index.PNG
+![index aplicacion](index-1.PNG)
 
 En este panel el ciudadano podrá acceder con su Id al sistema, se podrá registrar, o
 podrá consultar los turnos de una fecha determinada.
