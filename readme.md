@@ -32,7 +32,7 @@ Al registrar el turno, se comprueban que los campos se hayan rellenado correctam
 al crearse el registro en la Base de Datos, se vuelve al panel inicial de la aplicación,
 saliendo del perfil de usuario.
 
-/assets/images/acceso-usuario.PNG
+![panel de acceso de ciudadanos](acceso-usuario.PNG)
 
 ### Registro de ciudadano
 Al acceder a la aplicación, o si se deja en blanco el campo donde se solicita el Id de 
@@ -54,7 +54,7 @@ a filtrar, la cual no es modificable, y 2 botones, que nos permitirán seleccion
 de los turnos que deseamos que se muestren. En el caso de no encontrar turnos con el estado 
 indicado en la fecha seleccionada, no se mostrará ningún dato.
 
-/assets/images/listado-turnos.PNG
+![listado de turnos por fecha](listado.turnos.PNG)
 
 ## Operaciones que pueden realizar los usuarios
 - [x] Agregar un nuevo turno
