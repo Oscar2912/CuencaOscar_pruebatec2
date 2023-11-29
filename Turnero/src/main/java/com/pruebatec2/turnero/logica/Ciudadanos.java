@@ -8,8 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/**
+ * Clase que permite la creación de objetos Ciudadanos, y que se encargará de almacenar los datos relacionados con estos en la tabla que genere en la BD
+ */
+
+//Se crea la tabla ciudadanos en la BD
 @Entity
 public class Ciudadanos implements Serializable {
+    //Atributos
+    //Se indica que su PK será id y que se generará automáticamente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,9 +25,11 @@ public class Ciudadanos implements Serializable {
     private String apellido;
     private String dni;
     
+    //Se indica que estará relacionada con la tabla turnos
     @OneToMany(mappedBy = "ciudadano")
     private List<Turnos> turnos;
 
+    //Constructores
     public Ciudadanos() {
     }
 
@@ -32,6 +41,7 @@ public class Ciudadanos implements Serializable {
         this.turnos = turnos;
     }
 
+    //Métodos
     public Long getId() {
         return id;
     }

@@ -26,7 +26,7 @@ public class CiudadanosJpaController implements Serializable {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
-    
+
     public CiudadanosJpaController() {
         emf = Persistence.createEntityManagerFactory("turneroPU");
     }

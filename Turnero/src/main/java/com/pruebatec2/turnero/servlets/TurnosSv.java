@@ -1,6 +1,5 @@
 package com.pruebatec2.turnero.servlets;
 
-import com.pruebatec2.turnero.logica.Ciudadanos;
 import com.pruebatec2.turnero.logica.Controladora;
 import com.pruebatec2.turnero.logica.Turnos;
 import java.io.IOException;
@@ -15,13 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Clase responsable de gestionar los datos que se vayan a cargar en la tabla ciudadanos, o los que se soliciten a la misma, por parte del usuario a través de formularios en la página web
  * @author Oscar
  */
 @WebServlet(name = "TurnosSv", urlPatterns = {"/TurnosSv"})
 public class TurnosSv extends HttpServlet {
+    /**
+     * Se crea una variable control que permitirá a esta clase utilizar los métodos de la clase Controladora
+     */
     Controladora control = new Controladora();
-    //List<Turnos> listaTurnos = new ArrayList<>();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,6 +41,17 @@ public class TurnosSv extends HttpServlet {
         }
     }
 
+    /**
+     * Este método gestiona los datos que va a devolver la BD al usuario en función a la petición que realice desde los formularios del index.jsp con método get
+     * Se comprobará si, al llamar al método desde el formulario, se pasa un dato válido por parámetro
+     * Si no se pasa nada por parámetro, devolverá null, al igual que si los parámetros no se encuentran en la tabla turnos
+     * En caso de encontrarse en la tabla turnos el parámetro "filtro-fecha", pero no "filtro-estado", devolverá el listado de objetos Turnos que correspondan con la fecha indicada
+     * Si se encuentran en la tabla ambos parámetros, devolverá el listado de turnos filtrados por fecha y estado indicados en el formulario
+     * @param request registra los datos que se envíen por parámetro al realizar la solicitud de información desde el formulario
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -62,6 +74,17 @@ public class TurnosSv extends HttpServlet {
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
+    /**
+     * Este método gestiona los datos que se van a insertar en los registros de la tabla turnos en la BD antes de enviarlos a la misma para evitar la creación de registros erróneos
+     * Se creará un objeto Turnos, en el que, si no se indica el id del turno al llamar al método, se creará un turno nuevo con los datos indicados en el formulario
+     * En caso de indicarse el id del turno, se almacenará el turno que corresponda al id indicado, solicitando los datos a la BD, para poder actualizar los datos del mismo
+     * Si se indica en el formulario el estado por el que se desea modificar el turno en la BD, se actualizará el objeto Turnos con el parámetro indicado, y se actualizará en la BD
+     * En caso de no indicar el estado por el que se desea modificar el registro de la BD, no se realizarán cambios
+     * @param request almacena los datos introducidos por parte del usuario en los formularios con método post en el index.jsp
+     * @param response indica la dirección a la que se va a redirigir al usuario
+     * @throws ServletException
+     * @throws IOException 
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

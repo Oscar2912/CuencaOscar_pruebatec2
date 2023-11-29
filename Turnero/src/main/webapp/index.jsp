@@ -10,7 +10,7 @@
 <%@page import="com.pruebatec2.turnero.logica.Ciudadanos"%>
 <%@page contentType="text/html charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -28,14 +28,17 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
-        <!-- Navigation-->
+        <!-- Sección del menú superior de navegación -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
+                <!-- Texto con enlace que lleva a la parte superior de la web -->
                 <a class="navbar-brand" href="#page-top"><p>Sistema de incidencias</p></a>
+                <!-- Botón que sustituye al menú al detectarse que el ancho de pantalla no es lo suficientemente grande como para que se muestre correctamente el contenido -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
+                <!-- Menú -->
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#ciudadano">Ciudadano</a></li>
@@ -60,7 +63,12 @@
             <div class="results-table">
                 <% if (request.getAttribute("resultadosCiudadanos") != null) { %>
                 <% Ciudadanos ciudadanoFiltro = (Ciudadanos) request.getAttribute("resultadosCiudadanos"); %>
-                    <div id="liveAlertPlaceholder"><div><div class="alert alert-success alert-dismissible" role="alert">   <div>Bienvenid@ <%= ciudadanoFiltro.getNombre() %></div><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div></div></div>
+                    <div id="liveAlertPlaceholder">
+                        <div class="alert alert-success alert-dismissible" role="alert"> 
+                            <div>Bienvenid@ <%= ciudadanoFiltro.getNombre() %></div><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <!-- Tabla que muestra los datos del ciudadano -->
                     <h4>Datos de usuario:</h4>
                     <table class="table">
                         <thead>
@@ -79,6 +87,7 @@
                                 </tr>
                         </tbody>
                     </table>
+                    <!-- Tabla que permite la solicitud de un turno por el ciudadano -->
                     <h4>Solicitud de turno</h4>
                     <form action="TurnosSv" method="post">
                         <input type="hidden" class="form-control" id="id-turno" name="id-turno" value=null>
@@ -110,6 +119,7 @@
                     </form>
                 <% }else{ %>
             </div>
+            <!-- Tabla que permite el registro del ciudadano en el sistema -->
             <h4> Registro de ciudadano </h4>
             <form action="CiudadanosSv" method="post">
                 <div class="form-group">
@@ -130,15 +140,15 @@
                 <button type="button" id="liveAlertBtn" hidden><button type="submit" class="btn btn-primary">Enviar</button></button>
             </form>
             <hr>
-            <div id="alertCiudadanoCreado"></div>
             <% } %>
         </section>
-        
+        <!-- Sección que muestra la información sobre los turnos -->
         <section class="page-section" id="turnos">
             <h2> Información sobre turnos </h2>
             <br>
             <br>
             <h4>Listado de turnos</h4>
+            <!-- Formulario que solicita que se indique la fecha de los turnos ya creados que se desean mostrar -->
             <form action="TurnosSv" method="get">
                 <div class="form-group">
                     <label for="filtro-fecha">Fecha del Turno:</label>
@@ -149,9 +159,13 @@
                 <br>
                 <br>
             </form>
+            <!-- Apartado en el que se muestran los turnos filtrados -->
             <div class="results-table">
+                <!-- Se comprueba que el resultado de los turnos solicitados no sea nulo -->
                 <% if (request.getAttribute("resultadosTurnos") != null) { %>
+                    <!-- Se crea una lista donde se almacenarán los turnos resultantes -->
                     <% List<Turnos> listaTurnos = (List<Turnos>) request.getAttribute("resultadosTurnos"); %>
+                    <!-- Se comprueba que la lista no esté vacía -->
                     <% if (!listaTurnos.isEmpty()) { %>
                         <h4>Información de los turnos registrados</h4>
                         <table class="table">
@@ -174,6 +188,7 @@
                                         <td><%= turno.getFecha() %></td>
                                         <td><%= turno.getCiudadano().getId() + " " + turno.getCiudadano().getNombre() + " " + turno.getCiudadano().getApellido() %></td>
                                         <td>
+                                            <!-- Formulario dentro de la tabla con los turnos resultantes que permite el cambio de estado del turno seleccionado -->
                                             <form action="TurnosSv" method="post">
                                                 <div class="form-group">
                                                     <input type="hidden" class="form-control" id="id-turno" name="id-turno" value=<%= turno.getId() %> readonly>
@@ -193,7 +208,9 @@
                             </tbody>
                         </table>
                         <br>
+                        <!-- Se almacena la fecha indicada en el primer formulario en una variable para mostrarla en el segundo, en caso de que el usuario quiera filtrar los turnos por estado -->
                         <%LocalDate fecha = listaTurnos.get(0).getFecha();%>
+                        <!-- Formulario que permite filtrar los turnos de la fecha indicada por estado -->
                         <h4>Filtrado de turnos</h4>
                         <form action="TurnosSv" method="get">
                             <div class="form-group">

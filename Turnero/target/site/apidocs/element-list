@@ -1,0 +1,6 @@
+com.pruebatec2.turnero
+com.pruebatec2.turnero.logica
+com.pruebatec2.turnero.persistencia
+com.pruebatec2.turnero.persistencia.exceptions
+com.pruebatec2.turnero.resources
+com.pruebatec2.turnero.servlets

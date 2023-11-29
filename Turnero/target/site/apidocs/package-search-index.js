@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.pruebatec2.turnero"},{"l":"com.pruebatec2.turnero.logica"},{"l":"com.pruebatec2.turnero.persistencia"},{"l":"com.pruebatec2.turnero.persistencia.exceptions"},{"l":"com.pruebatec2.turnero.resources"},{"l":"com.pruebatec2.turnero.servlets"}];updateSearchResults();

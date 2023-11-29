@@ -9,8 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * Clase que permite la creación de objetos Turnos, y que se encargará de almacenar los datos relacionados con estos en la tabla que genere en la BD
+ */
+
+//Se crea la tabla turnos en la BD
 @Entity
 public class Turnos implements Serializable {
+    //Atributos
+    //Se indica que su PK será id y que se generará automáticamente
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,10 +26,12 @@ public class Turnos implements Serializable {
     private String estado;
     private LocalDate fecha;
     
+    //Se indica que estará relacionada con la tabla ciudadanos, y que su PK será el id del ciudadano
     @ManyToOne
     @JoinColumn(name = "ciudadano_id")
     private Ciudadanos ciudadano;
 
+    //Constructores
     public Turnos() {
     }
 
@@ -34,6 +43,7 @@ public class Turnos implements Serializable {
         this.ciudadano = ciudadano;
     }
 
+    //Métodos
     public Long getId() {
         return id;
     }
