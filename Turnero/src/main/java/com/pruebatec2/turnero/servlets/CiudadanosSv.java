@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Clase responsable de gestionar los datos que se vayan a cargar en la tabla ciudadanos, o los que se soliciten a la misma, por parte del usuario a través de formularios en la página web
- * @author Oscar
  */
 @WebServlet(name = "CiudadanosSv", urlPatterns = {"/CiudadanosSv"})
 public class CiudadanosSv extends HttpServlet {

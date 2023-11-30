@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 
 /**
  * Clase encargada de controlar las peticiones de información e inserciones de datos que se realizarán desde la clase controladora del paquete "logica"
- * @author Oscar
  */
 
 public class ControladoraPersistencia {

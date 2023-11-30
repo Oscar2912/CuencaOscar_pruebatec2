@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * Clase encargada de controlar las peticiones de información e inserciones de datos que se realizarán desde las clases que se encuentran en el paquete "servlets"
- * @author Oscar
  */
 
 public class Controladora {
