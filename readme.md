@@ -63,7 +63,7 @@ indicado en la fecha seleccionada, no se mostrará ningún dato.
     - Plantilla utilizada: Agency (https://startbootstrap.com/theme/agency)
 - JPA
 - MySQL
-    - Enlace a la BD: ./blob/master/turnero.sql
+    - Enlace a la BD: https://github.com/Oscar2912/CuencaOscar_pruebatec2/blob/master/turnero.sql
 - Colecciones
 - Objetos
 - Funciones lambda
