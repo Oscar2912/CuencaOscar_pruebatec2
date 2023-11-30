@@ -6,7 +6,7 @@ y que, accediendo al sistema a través del ID asignado a su usuario, podra regis
 Se considera que la versión inicial de la aplicación está completa, ya que es funcional
 y su código está comentado.
 
-##Requisitos del entorno de desarrollo para la integración
+## Requisitos del entorno de desarrollo para la integración
 Será necesario contar con OpenJDK17, Apache Tomcat 9.0.83 y al menos un navegador web.
 También será necesario contar con acceso a un servicio SQL en el que se pueda crear una 
 base de datos llamada **turnero**, en la que se crearán automáticamente las tablas ciudadanos
